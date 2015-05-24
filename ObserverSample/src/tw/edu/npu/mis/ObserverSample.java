@@ -27,6 +27,7 @@ package tw.edu.npu.mis;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Simulation of a GUI application.
@@ -44,8 +45,15 @@ public class ObserverSample {
         views.add(new View("View 1", window, model));
         views.add(new View("View 2", window, model));
         views.add(new View("View 3", window, model));
-         views.add(new View("View 3", window, model));
-
+        views.add(new View("View 4", window, model));
+        
+        Scanner sc = new Scanner(System.in);
+        String s;
+        s = sc.nextLine();
+        StringBuffer sb = new StringBuffer();
+        sb.append(s);
+        sb.reverse();
+        System.out.println(sb);
         // Start the event loop.
         window.startEventLoop(controller, views);
     }
