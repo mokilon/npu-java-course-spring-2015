@@ -30,32 +30,31 @@ package tw.edu.npu.mis;
  * @author STP
  */
 
-public class AlternatativeView extends View{
+public class AlternatativeView implements Observer,Showable{
+
+   private final String mName;
+   private final Window mWindow;
+   private final Model mModel;
 
     public AlternatativeView(String name, Window window, Model model) {
-        super(name, window, model);
+        mName = name;
+        mWindow = window;
+        mModel = model;
+        mModel.join(this);
     }
+    public void invalidate() {
+        mWindow.schduleRedraw(this);
+    }
+
      @Override
 
     public void onDraw() {
-        String s = mModel.getData();
-        StringBuffer sb = new StringBuffer();
-        sb.append(s);
-        sb.reverse();
-        System.out.println("View (" + mName + "): " + sb);
+
+          System.out.println("AlternatativeView (" + mName + "): " + new StringBuilder(mModel.getData()).reverse());
     }
-/**
- * 將字串反向印出(程式碼是從網路上找到的
- * 下面是原始的程式碼
- *  Scanner sc = new Scanner(System.in);
-        String s;
-        s = sc.nextLine();
-        StringBuffer sb = new StringBuffer();
-        sb.append(s);
-        sb.reverse();
-        System.out.println(sb);
-        // Start the event loop.
-        window.startEventLoop(controller, views);
- */
-    
+
+    @Override
+    public void Update() {
+    invalidate();
+    }    
 }

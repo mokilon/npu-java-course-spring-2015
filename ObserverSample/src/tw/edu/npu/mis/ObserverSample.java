@@ -41,20 +41,12 @@ public class ObserverSample {
         Window window = new Window();
         Model model = new Model();
         Controller controller = new Controller(model);
-        List<View> views = new ArrayList<>();
+        List<Showable> views = new ArrayList<>();
         views.add(new View("View 1", window, model));
         views.add(new View("View 2", window, model));
         views.add(new View("View 3", window, model));
-        views.add(new View("View 4", window, model));
+        views.add(new AlternatativeView("AlternataiveView", window, model));
         
-        Scanner sc = new Scanner(System.in);
-        String s;
-        s = sc.nextLine();
-        StringBuffer sb = new StringBuffer();
-        sb.append(s);
-        sb.reverse();
-        System.out.println(sb);
-        // Start the event loop.
-        window.startEventLoop(controller, views);
+       
     }
 }
