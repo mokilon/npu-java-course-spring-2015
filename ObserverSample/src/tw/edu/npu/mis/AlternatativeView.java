@@ -31,7 +31,9 @@ package tw.edu.npu.mis;
  */
 
 public class AlternatativeView implements Observer,Showable{
-
+/**
+ * 套用前面2個檔案的方法
+ */
    private final String mName;
    private final Window mWindow;
    private final Model mModel;
@@ -49,10 +51,11 @@ public class AlternatativeView implements Observer,Showable{
      @Override
 
     public void onDraw() {
-
-          System.out.println("AlternatativeView (" + mName + "): " + new StringBuilder(mModel.getData()).reverse());
+     System.out.println("AlternatativeView (" + mName + "): " + new StringBuilder(mModel.getData()).reverse());
     }
-
+/**
+ * 轉字串輸出程式碼
+ */
     @Override
     public void Update() {
     invalidate();
