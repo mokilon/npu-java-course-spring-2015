@@ -25,11 +25,23 @@
  */
 package tw.edu.npu.mis;
 
+import static java.lang.String.join;
+import java.util.ArrayList;
+
 /**
  *
  * @author STP
  */
 public class Subjuct {
-    
-    
+    private ArrayList<Observer>table = new ArrayList<Observer>(); 
+    public void join(Observer o){
+            table.add(o);
+}
+    public void depart(Observer o){
+            table.add(o);
+    }
+    public void notice(Observer o){
+            table.add(o);
+    }
+            
 }
