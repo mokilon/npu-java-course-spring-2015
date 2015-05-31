@@ -36,6 +36,9 @@ public class Subjuct {
     private ArrayList<Observer>table = new ArrayList<Observer>(); 
     public void join(Observer o){
             table.add(o);
+            /**
+             * 
+             */
 }
     public void depart(Observer o){
             table.remove(o);

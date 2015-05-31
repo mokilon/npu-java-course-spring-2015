@@ -30,6 +30,10 @@ package tw.edu.npu.mis;
  * @author STP
  */
 public class Observer {
+
+    void Update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
