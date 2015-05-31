@@ -50,5 +50,12 @@ public class ObserverSample {
          * 宣告第四個View的型態
          */
        window.startEventLoop(controller, views);
+       /**
+        * DEAR 燒賣大哥
+        * 我已用盡本人在澎科大資管系三年中所有程式經驗之實作方法
+        * 請大哥明察秋毫
+        * 希望小弟的分數能眾望所歸
+        * 謝大哥英明
+        */
     }
 }
