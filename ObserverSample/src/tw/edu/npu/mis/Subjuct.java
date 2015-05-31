@@ -37,15 +37,23 @@ public class Subjuct {
     public void join(Observer o){
             table.add(o);
             /**
-             * 
+             * 新增資料之程式碼
              */
 }
     public void depart(Observer o){
             table.remove(o);
+            /**
+             * 刪除資料之程式碼
+             */
+            
     }
     public void notice(){   
          for (Observer o:table){
          o.Update();
+         
+         /**
+          * 通知(上傳)之程式碼
+          */
     }
     }
             
