@@ -38,10 +38,12 @@ public class Subjuct {
             table.add(o);
 }
     public void depart(Observer o){
-            table.add(o);
+            table.remove(o);
     }
-    public void notice(Observer o){
-            table.add(o);
+    public void notice(){   
+         for (Observer o:table){
+         o.Update();
+    }
     }
             
 }
