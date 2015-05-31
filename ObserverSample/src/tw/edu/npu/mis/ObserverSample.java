@@ -46,7 +46,9 @@ public class ObserverSample {
         views.add(new View("View 2", window, model));
         views.add(new View("View 3", window, model));
         views.add(new AlternatativeView("AlternataiveView", window, model));
-        
+        /**
+         * 宣告第四個View的型態
+         */
        window.startEventLoop(controller, views);
     }
 }

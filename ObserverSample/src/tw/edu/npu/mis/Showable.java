@@ -31,5 +31,8 @@ package tw.edu.npu.mis;
  */
 public interface Showable {
     void onDraw();
+    /**
+     * 建立View的實作方法
+     */
     
 }
