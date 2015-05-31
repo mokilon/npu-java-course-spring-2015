@@ -29,6 +29,33 @@ package tw.edu.npu.mis;
  *
  * @author STP
  */
-public class AlternatativeView {
+
+public class AlternatativeView extends View{
+
+    public AlternatativeView(String name, Window window, Model model) {
+        super(name, window, model);
+    }
+     @Override
+
+    public void onDraw() {
+        String s = mModel.getData();
+        StringBuffer sb = new StringBuffer();
+        sb.append(s);
+        sb.reverse();
+        System.out.println("View (" + mName + "): " + sb);
+    }
+/**
+ * 將字串反向印出(程式碼是從網路上找到的
+ * 下面是原始的程式碼
+ *  Scanner sc = new Scanner(System.in);
+        String s;
+        s = sc.nextLine();
+        StringBuffer sb = new StringBuffer();
+        sb.append(s);
+        sb.reverse();
+        System.out.println(sb);
+        // Start the event loop.
+        window.startEventLoop(controller, views);
+ */
     
 }
