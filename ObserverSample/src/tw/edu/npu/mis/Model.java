@@ -50,7 +50,9 @@ public class Model extends Subjuct{
      */
     public void setData(String data) {
         mData = data;
-        notice();
+        notice();/**
+         * 繼承Subject裡通知的方法
+         */
     }
 
 }
