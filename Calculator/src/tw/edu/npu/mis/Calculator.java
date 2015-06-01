@@ -35,6 +35,8 @@ public class Calculator {
     
     public void appendDigit(int digit) {
         // TODO code application logic here
+        
+        
     }
     
     public void appendDot() {
