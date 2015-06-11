@@ -8,7 +8,9 @@ package tw.edu.npu.mis;
 /**
  * The model class of the calculator application.
  */
-public class Calculator {
+public class Calculator extends java.util.Observable {
+    String boo ="",o;
+    int x,y;
     
     /**
      * The available operators of the calculator.
@@ -34,7 +36,9 @@ public class Calculator {
     }
     
     public void appendDigit(int digit) {
-        // TODO code application logic here
+       boo += String.valueOf(digit);
+       getDisplay();
+       
         
         
     }
@@ -44,19 +48,81 @@ public class Calculator {
     }
     
     public void performOperation(Operator operator) {
-        // TODO code application logic here
+       if(operator == Operator.PLUS)
+       {
+           x = Integer.parseInt(boo);
+           boo = "";
+           getDisplay();
+           o = "+";
+       }
+        if(operator == Operator.MINUS)
+       {
+           x = Integer.parseInt(boo);
+           boo = "";
+           getDisplay();
+           o = "-";
+       }
+         if(operator == Operator.TIMES)
+       {
+           x = Integer.parseInt(boo);
+           boo = "";
+           getDisplay();
+           o = "x";
+       }
+         if(operator == Operator.OVER)
+       {
+           x = Integer.parseInt(boo);
+           boo = "";
+           getDisplay();
+           o = "/";
+       }
+       if(operator == Operator.EQUAL)
+       {
+           if(o =="+")
+           {
+               y = Integer.parseInt(boo);
+               boo = String.valueOf(x+y);
+               getDisplay();
+               boo = "+";
+           }
+            if(o =="-")
+           {
+               y = Integer.parseInt(boo);
+               boo = String.valueOf(x-y);
+               getDisplay();
+               boo = "-";
+           }
+             if(o =="x")
+           {
+               y = Integer.parseInt(boo);
+               boo = String.valueOf(x*y);
+               getDisplay();
+               boo = "x";
+           }
+              if(o =="/")
+           {
+               y = Integer.parseInt(boo);
+               boo = String.valueOf(x/y);
+               getDisplay();
+               boo = "/";
+           }
+       }
     }
     
     public String getDisplay() {
         // TODO code application logic here
+        setChanged();
+        notifyObservers(boo);
         return null;
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public void ss(String a){
+        if(a == "+") performOperation(Operator.PLUS);
+        if(a == "=") performOperation(Operator.EQUAL);
+         if(a == "-") performOperation(Operator.MINUS);
+          if(a == "x") performOperation(Operator.TIMES);
+           if(a == "/") performOperation(Operator.OVER);
+        
     }
+   
 
 }
