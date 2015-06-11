@@ -83,28 +83,28 @@ public class Calculator extends java.util.Observable {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x+y);
                getDisplay();
-               boo = "+";
+              boo = "";
            }
             if(o =="-")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x-y);
                getDisplay();
-               boo = "-";
+                boo = "";
            }
              if(o =="x")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x*y);
                getDisplay();
-               boo = "x";
+               boo = "";
            }
               if(o =="/")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x/y);
                getDisplay();
-               boo = "/";
+               boo = "";
            }
        }
     }
