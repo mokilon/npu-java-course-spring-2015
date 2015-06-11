@@ -11,6 +11,9 @@ package tw.edu.npu.mis;
 public class Calculator extends java.util.Observable {
     String boo ="",o;
     int x,y;
+    /**
+     * 宣告字串
+     */
     
     /**
      * The available operators of the calculator.
@@ -54,28 +57,36 @@ public class Calculator extends java.util.Observable {
            boo = "";
            getDisplay();
            o = "+";
-       }
+       }/**
+        * 宣告"加"
+        */
         if(operator == Operator.MINUS)
        {
            x = Integer.parseInt(boo);
            boo = "";
            getDisplay();
            o = "-";
-       }
+       }/**
+        * 宣告"減"
+        */
          if(operator == Operator.TIMES)
        {
            x = Integer.parseInt(boo);
            boo = "";
            getDisplay();
            o = "x";
-       }
+       }/**
+        * 宣告"乘"
+        */
          if(operator == Operator.OVER)
        {
            x = Integer.parseInt(boo);
            boo = "";
            getDisplay();
            o = "/";
-       }
+       }/**
+        * 宣告"除"
+        */
        if(operator == Operator.EQUAL)
        {
            if(o =="+")
@@ -84,28 +95,36 @@ public class Calculator extends java.util.Observable {
                boo = String.valueOf(x+y);
                getDisplay();
               boo = "";
-           }
+           }/**
+            * 加的算法
+            */
             if(o =="-")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x-y);
                getDisplay();
                 boo = "";
-           }
+           }/**
+            * 減的算法
+            */
              if(o =="x")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x*y);
                getDisplay();
                boo = "";
-           }
+           }/**
+            * 乘的算法
+            */
               if(o =="/")
            {
                y = Integer.parseInt(boo);
                boo = String.valueOf(x/y);
                getDisplay();
                boo = "";
-           }
+           }/**
+            * 除的算法
+            */
        }
     }
     
@@ -118,9 +137,9 @@ public class Calculator extends java.util.Observable {
     public void ss(String a){
         if(a == "+") performOperation(Operator.PLUS);
         if(a == "=") performOperation(Operator.EQUAL);
-         if(a == "-") performOperation(Operator.MINUS);
-          if(a == "x") performOperation(Operator.TIMES);
-           if(a == "/") performOperation(Operator.OVER);
+        if(a == "-") performOperation(Operator.MINUS);
+        if(a == "x") performOperation(Operator.TIMES);
+        if(a == "/") performOperation(Operator.OVER);
         
     }
    
